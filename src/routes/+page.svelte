@@ -2,7 +2,7 @@
 	type Product = {
 		id: string;
 		name: string;
-		price: number;
+		price: number | null;
 	};
 
 	type Person = {
@@ -51,7 +51,7 @@
 
 		<button
 			on:click={() => {
-				person.products.unshift({ id: crypto.randomUUID(), name: 'Coke', price: 2 });
+				person.products.unshift({ id: crypto.randomUUID(), name: '', price: null });
 				person = person;
 			}}>Add product</button
 		>
