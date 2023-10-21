@@ -33,7 +33,9 @@
 		}}>Add person</button
 	>
 
-	<button on:click={() => console.log(people)}>Print</button>
+	{#if import.meta.env.DEV}
+		<button style="background-color: orange" on:click={() => console.log(people)}>Print</button>
+	{/if}
 </div>
 
 {#if !people.length}
