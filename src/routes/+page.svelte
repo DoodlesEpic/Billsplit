@@ -60,7 +60,7 @@
 		{#each person.products as product}
 			<div>
 				<input type="text" bind:value={product.name} />
-				<input class="price" type="text" bind:value={product.price} />
+				<input class="price" type="number" bind:value={product.price} />
 				<button
 					on:click={() => (person.products = person.products.filter((p) => p.id !== product.id))}
 					>Delete product</button
