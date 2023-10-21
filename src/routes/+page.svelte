@@ -106,10 +106,22 @@
 	</div>
 {/each}
 
-{#if people.length}
-	<div>
+{#if people.some((person) => person.products.some((product) => product.price))}
+	<div class="card">
+		<h2>Bill preview</h2>
+		<ul style="list-style: none">
+			{#each people as person}
+				{#each person.products as product}
+					{#if product.price}
+						<li>{product.name} ${product.price} - {person.name}</li>
+					{/if}
+				{/each}
+			{/each}
+		</ul>
+
+		<h2 style="margin-top: 1rem;">Total value of all products</h2>
 		<p>
-			Total value of all products: ${people.reduce(
+			${people.reduce(
 				(acc, person) => acc + person.products.reduce((acc, product) => acc + product.price, 0),
 				0
 			)}
@@ -118,6 +130,11 @@
 {/if}
 
 <style>
+	h2 {
+		margin: 0rem;
+		padding: 0rem;
+	}
+
 	input {
 		margin-bottom: 0.5rem;
 		padding: 0.5rem;
