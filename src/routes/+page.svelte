@@ -56,11 +56,11 @@
 			}}>Add product</button
 		>
 
-		<input class="name" type="text" bind:value={person.name} />
+		<input class="name" placeholder="Person name" type="text" bind:value={person.name} />
 		{#each person.products as product}
 			<div>
-				<input type="text" bind:value={product.name} />
-				<input class="price" type="number" bind:value={product.price} />
+				<input type="text" placeholder="Product name" bind:value={product.name} />
+				<input class="price" placeholder="Product price" type="number" bind:value={product.price} />
 				<button
 					on:click={() => (person.products = person.products.filter((p) => p.id !== product.id))}
 					>Delete product</button
