@@ -80,3 +80,36 @@
 		</p>
 	</div>
 {/if}
+
+<style>
+	input {
+		margin-bottom: 0.5rem;
+		padding: 0.5rem;
+		border: 1px solid black;
+		border-radius: 0.5rem;
+	}
+
+	button {
+		padding: 0.5rem;
+		background-color: white;
+		border: 1px solid black;
+		border-radius: 0.5rem;
+		cursor: pointer;
+	}
+
+	button:hover {
+		background-color: black;
+		color: white;
+	}
+
+	.name {
+		border: none;
+	}
+
+	.card {
+		border: 1px solid black;
+		padding: 1rem;
+		margin-bottom: 1rem;
+		border-radius: 0.5rem;
+	}
+</style>
