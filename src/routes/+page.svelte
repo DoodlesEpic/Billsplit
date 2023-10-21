@@ -35,6 +35,40 @@
 
 	{#if import.meta.env.DEV}
 		<button style="background-color: orange" on:click={() => console.log(people)}>Print</button>
+		<button
+			style="background-color: orange"
+			on:click={() => {
+				people = [
+					{
+						id: crypto.randomUUID(),
+						name: 'Person 1',
+						products: [
+							{
+								id: crypto.randomUUID(),
+								name: 'Product 1',
+								price: 100
+							},
+							{
+								id: crypto.randomUUID(),
+								name: 'Product 2',
+								price: 200
+							}
+						]
+					},
+					{
+						id: crypto.randomUUID(),
+						name: 'Person 2',
+						products: [
+							{
+								id: crypto.randomUUID(),
+								name: 'Product 1',
+								price: 100
+							}
+						]
+					}
+				];
+			}}>Default</button
+		>
 	{/if}
 </div>
 
