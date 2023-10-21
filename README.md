@@ -22,3 +22,7 @@ yarn build
 ```
 
 You can preview the production build with `yarn preview`.
+
+## License
+
+This project is licensed under the GNU Affero General Public License v3.0. Read the [LICENSE](LICENSE) file for more information.
