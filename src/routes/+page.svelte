@@ -103,6 +103,10 @@
 				>
 			</div>
 		{/each}
+
+		<p>
+			<bold> ${person.products.reduce((acc, product) => acc + (product.price ?? 0), 0)} </bold>
+		</p>
 	</div>
 {/each}
 
