@@ -1,4 +1,10 @@
 <script lang="ts">
+	import Button from '@smui/button';
+	// import Paper, { Content } from '@smui/card';
+	import IconButton from '@smui/icon-button';
+	import Textfield from '@smui/textfield';
+	import Paper from '@smui/paper';
+
 	type Product = {
 		id: string;
 		name: string;
@@ -16,13 +22,14 @@
 	let counter = 2;
 </script>
 
-<div>
-	<h1>Billsplit</h1>
+<div style="margin: 1rem">
+	<h2>Billsplit</h2>
 	<p>A fast and easy way to split restaurant bills</p>
 </div>
 
-<div style="margin-bottom: .5rem;">
-	<button
+<div style="margin: 1rem">
+	<Button
+		variant="raised"
 		on:click={() => {
 			people.unshift({
 				id: crypto.randomUUID(),
@@ -30,12 +37,15 @@
 				products: []
 			});
 			people = people;
-		}}>Add person</button
+		}}>Add person</Button
 	>
 
 	{#if import.meta.env.DEV}
-		<button style="background-color: orange" on:click={() => console.log(people)}>Print</button>
-		<button
+		<Button variant="raised" style="background-color: orange" on:click={() => console.log(people)}
+			>Print</Button
+		>
+		<Button
+			variant="raised"
 			style="background-color: orange"
 			on:click={() => {
 				people = [
@@ -67,7 +77,7 @@
 						]
 					}
 				];
-			}}>Default</button
+			}}>Default</Button
 		>
 	{/if}
 </div>
@@ -77,29 +87,57 @@
 {/if}
 
 {#each people as person}
-	<div class="card">
-		<button
-			on:click={() => {
-				people = people.filter((p) => p.id !== person.id);
-				people = people;
-			}}>Delete person</button
-		>
+	<Paper style="margin: 1rem 0.5rem">
+		<div class="row">
+			<Textfield
+				class="name"
+				placeholder="Person name"
+				label="Person name"
+				type="text"
+				bind:value={person.name}
+			/>
 
-		<button
-			on:click={() => {
-				person.products.unshift({ id: crypto.randomUUID(), name: '', price: null });
-				person = person;
-			}}>Add product</button
-		>
+			<IconButton
+				class="material-icons"
+				on:click={() => {
+					person.products.unshift({ id: crypto.randomUUID(), name: '', price: null });
+					person = person;
+				}}>add</IconButton
+			>
 
-		<input class="name" placeholder="Person name" type="text" bind:value={person.name} />
+			<IconButton
+				class="material-icons"
+				on:click={() => {
+					people = people.filter((p) => p.id !== person.id);
+					people = people;
+				}}>delete</IconButton
+			>
+		</div>
+
 		{#each person.products as product}
-			<div>
-				<input type="text" placeholder="Product name" bind:value={product.name} />
-				<input class="price" placeholder="Product price" type="number" bind:value={product.price} />
-				<button
+			<div class="row">
+				<Textfield
+					type="text"
+					placeholder="Product name"
+					variant="outlined"
+					bind:value={product.name}
+					label="Product name"
+				/>
+
+				<Textfield
+					type="number"
+					variant="outlined"
+					placeholder="Product price"
+					bind:value={product.price}
+					label="Product price"
+					prefix="$"
+					input$pattern={'\\d+(\\.\\d{2})?'}
+				/>
+
+				<IconButton
+					class="material-icons"
 					on:click={() => (person.products = person.products.filter((p) => p.id !== product.id))}
-					>Delete product</button
+					>delete</IconButton
 				>
 			</div>
 		{/each}
@@ -107,13 +145,13 @@
 		<p>
 			<bold> ${person.products.reduce((acc, product) => acc + (product.price ?? 0), 0)} </bold>
 		</p>
-	</div>
+	</Paper>
 {/each}
 
 {#if people.some((person) => person.products.some((product) => product.price))}
-	<div class="card">
-		<h2>Bill preview</h2>
-		<ul style="list-style: none">
+	<Paper style="margin: 1rem 0.5rem">
+		<h3>Bill preview</h3>
+		<ul style="list-style: none; padding: 0rem">
 			{#each people as person}
 				{#each person.products as product}
 					{#if product.price}
@@ -123,50 +161,28 @@
 			{/each}
 		</ul>
 
-		<h2 style="margin-top: 1rem;">Total value of all products</h2>
+		<h4 style="margin-top: 1rem;">Total value of all products</h4>
 		<p>
 			${people.reduce(
 				(acc, person) => acc + person.products.reduce((acc, product) => acc + product.price, 0),
 				0
 			)}
 		</p>
-	</div>
+	</Paper>
 {/if}
 
 <style>
-	h2 {
+	h2,
+	h4,
+	h3 {
 		margin: 0rem;
 		padding: 0rem;
 	}
 
-	input {
-		margin-bottom: 0.5rem;
-		padding: 0.5rem;
-		border: 1px solid black;
-		border-radius: 0.5rem;
-	}
-
-	button {
-		padding: 0.5rem;
-		background-color: white;
-		border: 1px solid black;
-		border-radius: 0.5rem;
-		cursor: pointer;
-	}
-
-	button:hover {
-		background-color: black;
-		color: white;
-	}
-
-	.name {
-		border: none;
-	}
-
-	.card {
-		border: 1px solid black;
-		padding: 1rem;
-		margin-bottom: 1rem;
-		border-radius: 0.5rem;
+	.row {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		margin: 1rem 0rem;
 	}
 </style>
