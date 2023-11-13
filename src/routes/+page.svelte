@@ -95,7 +95,7 @@
 	{/if}
 
 	{#each people as person}
-		<Paper style="margin: 1rem 0.5rem">
+		<Paper elevation={4} style="margin: 1rem 0.5rem">
 			<div class="row">
 				<Textfield
 					class="name"
@@ -157,7 +157,7 @@
 	{/each}
 
 	{#if people.some((person) => person.products.some((product) => product.price))}
-		<Paper style="margin: 1rem 0.5rem">
+		<Paper elevation={4} style="margin: 1rem 0.5rem">
 			<h3>Bill preview</h3>
 			<ul style="list-style: none; padding: 0rem">
 				{#each people as person}
@@ -181,7 +181,6 @@
 </AutoAdjust>
 
 <style>
-	h2,
 	h4,
 	h3 {
 		margin: 0rem;
