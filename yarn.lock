@@ -540,6 +540,23 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@material/top-app-bar@npm:^14.0.0":
+  version: 14.0.0
+  resolution: "@material/top-app-bar@npm:14.0.0"
+  dependencies:
+    "@material/animation": "npm:^14.0.0"
+    "@material/base": "npm:^14.0.0"
+    "@material/elevation": "npm:^14.0.0"
+    "@material/ripple": "npm:^14.0.0"
+    "@material/rtl": "npm:^14.0.0"
+    "@material/shape": "npm:^14.0.0"
+    "@material/theme": "npm:^14.0.0"
+    "@material/typography": "npm:^14.0.0"
+    tslib: "npm:^2.1.0"
+  checksum: e561c507f00e140c6492dae11eee577b28ab6b4036161081a2bc3925ccd88c4bc7aeae162afd2197486f97de4d9a5f86491d3c55b90713a421411ef029f88e0c
+  languageName: node
+  linkType: hard
+
 "@material/touch-target@npm:^14.0.0":
   version: 14.0.0
   resolution: "@material/touch-target@npm:14.0.0"
@@ -730,6 +747,18 @@ __metadata:
     "@smui/ripple": "npm:^7.0.0-beta.15"
     svelte2tsx: "npm:^0.6.21"
   checksum: 4d7a966123e6849b2b4a7662243694841db78c85109b1f53c2c00c43abdcd51523450c70f11c1b59c722681b916f3e02421c8d4549c3e5e73e9bd3b556c8ebfc
+  languageName: node
+  linkType: hard
+
+"@smui/top-app-bar@npm:^7.0.0-beta.15":
+  version: 7.0.0-beta.15
+  resolution: "@smui/top-app-bar@npm:7.0.0-beta.15"
+  dependencies:
+    "@material/feature-targeting": "npm:^14.0.0"
+    "@material/top-app-bar": "npm:^14.0.0"
+    "@smui/common": "npm:^7.0.0-beta.15"
+    svelte2tsx: "npm:^0.6.21"
+  checksum: 0f4ab6ea03903d6a031b3f919a5c00f8346a56eca03184a369532565eaf56b4fabb192b1b5bccc0c8a0ab9b4f632aeea9db2898babd8ff78433224dd0c6716d0
   languageName: node
   linkType: hard
 
@@ -1150,6 +1179,7 @@ __metadata:
     "@smui/icon-button": "npm:^7.0.0-beta.15"
     "@smui/paper": "npm:^7.0.0-beta.15"
     "@smui/textfield": "npm:^7.0.0-beta.15"
+    "@smui/top-app-bar": "npm:^7.0.0-beta.15"
     "@sveltejs/adapter-auto": "npm:^2.0.0"
     "@sveltejs/kit": "npm:^1.20.4"
     "@typescript-eslint/eslint-plugin": "npm:^6.0.0"
