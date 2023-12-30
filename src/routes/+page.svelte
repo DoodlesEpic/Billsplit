@@ -3,6 +3,7 @@
 	import IconButton from '@smui/icon-button';
 	import Textfield from '@smui/textfield';
 	import Paper from '@smui/paper';
+	import Fab, { Label, Icon } from '@smui/fab';
 	import TopAppBar, { Row, Section, Title, AutoAdjust } from '@smui/top-app-bar';
 
 	type Product = {
@@ -36,8 +37,10 @@
 	</div>
 
 	<div style="margin: 1rem">
-		<Button
-			variant="raised"
+		<Fab
+			style="position: fixed; bottom: 0; right: 0; margin: 2rem;"
+			color="primary"
+			extended
 			on:click={() => {
 				people.unshift({
 					id: crypto.randomUUID(),
@@ -45,8 +48,11 @@
 					products: []
 				});
 				people = people;
-			}}>Add person</Button
+			}}
 		>
+			<Icon class="material-icons">add</Icon>
+			<Label>Add person</Label>
+		</Fab>
 
 		{#if import.meta.env.DEV}
 			<Button variant="raised" style="background-color: orange" on:click={() => console.log(people)}

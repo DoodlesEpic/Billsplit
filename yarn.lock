@@ -1705,6 +1705,27 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@material/fab@npm:^14.0.0":
+  version: 14.0.0
+  resolution: "@material/fab@npm:14.0.0"
+  dependencies:
+    "@material/animation": "npm:^14.0.0"
+    "@material/dom": "npm:^14.0.0"
+    "@material/elevation": "npm:^14.0.0"
+    "@material/feature-targeting": "npm:^14.0.0"
+    "@material/focus-ring": "npm:^14.0.0"
+    "@material/ripple": "npm:^14.0.0"
+    "@material/rtl": "npm:^14.0.0"
+    "@material/shape": "npm:^14.0.0"
+    "@material/theme": "npm:^14.0.0"
+    "@material/tokens": "npm:^14.0.0"
+    "@material/touch-target": "npm:^14.0.0"
+    "@material/typography": "npm:^14.0.0"
+    tslib: "npm:^2.1.0"
+  checksum: c5342e47d316dba5212e686b70a8897df953972b98220ef3a64e4a3abf2530efe313f4e772d2f71b3d6c81d1f74ce02837ca0e6c0ab8d14ccf9ce86c8f807b00
+  languageName: node
+  linkType: hard
+
 "@material/feature-targeting@npm:^14.0.0":
   version: 14.0.0
   resolution: "@material/feature-targeting@npm:14.0.0"
@@ -2042,6 +2063,29 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@smui/common@npm:^7.0.0-beta.16":
+  version: 7.0.0-beta.16
+  resolution: "@smui/common@npm:7.0.0-beta.16"
+  dependencies:
+    "@material/dom": "npm:^14.0.0"
+    svelte2tsx: "npm:^0.6.27"
+  checksum: f2c304612102e408e84a9e321d11482ceb207bf72951db4a92a5ad490a030446e4969407a1391310d46ea50988ec36fcc93b2a3c3f460658fe461d3efac74b9f
+  languageName: node
+  linkType: hard
+
+"@smui/fab@npm:^7.0.0-beta.16":
+  version: 7.0.0-beta.16
+  resolution: "@smui/fab@npm:7.0.0-beta.16"
+  dependencies:
+    "@material/fab": "npm:^14.0.0"
+    "@material/feature-targeting": "npm:^14.0.0"
+    "@smui/common": "npm:^7.0.0-beta.16"
+    "@smui/ripple": "npm:^7.0.0-beta.16"
+    svelte2tsx: "npm:^0.6.27"
+  checksum: 4d8f500098f065fc68d46980a59519026c73ef960f9e9a8cdd8f01b02c2e87ac70ca505bdf17fec530e7dc8d37598fd30eda9c7b8dabc6d394743166e89f6cad
+  languageName: node
+  linkType: hard
+
 "@smui/floating-label@npm:^7.0.0-beta.15":
   version: 7.0.0-beta.15
   resolution: "@smui/floating-label@npm:7.0.0-beta.15"
@@ -2113,6 +2157,18 @@ __metadata:
     "@smui/common": "npm:^7.0.0-beta.15"
     svelte2tsx: "npm:^0.6.21"
   checksum: ab70129bf1ed06d13243850d5b6a6854cb4ed018684a2edcad9afba4f504cf7e813db14aed8ce049b844eec9619ddaf73e79e5b70cb574b3d1c0038d45fe3822
+  languageName: node
+  linkType: hard
+
+"@smui/ripple@npm:^7.0.0-beta.16":
+  version: 7.0.0-beta.16
+  resolution: "@smui/ripple@npm:7.0.0-beta.16"
+  dependencies:
+    "@material/dom": "npm:^14.0.0"
+    "@material/ripple": "npm:^14.0.0"
+    "@smui/common": "npm:^7.0.0-beta.16"
+    svelte2tsx: "npm:^0.6.27"
+  checksum: 19085454d610f9b780a2c1445b627947c29d0a238621285384f59f5f201d4cb051cca4334b6f09336ea3ccf31d5785fc253f5704a4b3f66194dd6d7f01cdce5a
   languageName: node
   linkType: hard
 
@@ -2717,6 +2773,7 @@ __metadata:
   resolution: "billsplit@workspace:."
   dependencies:
     "@smui/button": "npm:^7.0.0-beta.15"
+    "@smui/fab": "npm:^7.0.0-beta.16"
     "@smui/icon-button": "npm:^7.0.0-beta.15"
     "@smui/paper": "npm:^7.0.0-beta.15"
     "@smui/textfield": "npm:^7.0.0-beta.15"
@@ -6128,6 +6185,19 @@ __metadata:
     svelte: ^3.55 || ^4.0.0-next.0 || ^4.0
     typescript: ^4.9.4 || ^5.0.0
   checksum: b884046f27f0666042dd61cb8c30a2c607bb5aeec9b24fd1f57ff9b3df63be88f45ac3b942158930113fbc9c8f54942fa2dde1515d34f678aa7879182fe288d5
+  languageName: node
+  linkType: hard
+
+"svelte2tsx@npm:^0.6.27":
+  version: 0.6.27
+  resolution: "svelte2tsx@npm:0.6.27"
+  dependencies:
+    dedent-js: "npm:^1.0.1"
+    pascal-case: "npm:^3.1.1"
+  peerDependencies:
+    svelte: ^3.55 || ^4.0.0-next.0 || ^4.0 || ^5.0.0-next.0
+    typescript: ^4.9.4 || ^5.0.0
+  checksum: 41ae5cc15f12981108e2ebb00834b5f561e50c64c4ee544ab75a4669e45fd792ba0c1db917aa52e737369e94bf6247cf17326aed2b9aa8dd37aaed62635bb95a
   languageName: node
   linkType: hard
 
