@@ -97,7 +97,9 @@
 	</div>
 
 	{#if !people.length}
-		<p style="margin: 1rem">No one added yet.</p>
+		<Card style="margin: 1rem 0.5rem" variant="outlined">
+			<Content><p style="margin: 1rem">No one added yet.</p></Content>
+		</Card>
 	{/if}
 
 	{#each people as person}
