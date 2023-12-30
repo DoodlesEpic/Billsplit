@@ -32,10 +32,6 @@
 </TopAppBar>
 
 <AutoAdjust {topAppBar}>
-	<div style="margin: 1rem">
-		<p>A fast and easy way to split restaurant bills</p>
-	</div>
-
 	<Fab
 		style="position: fixed; z-index: 1; bottom: 0; right: 0; margin: 2rem;"
 		color="primary"
@@ -97,6 +93,10 @@
 	</div>
 
 	{#if !people.length}
+		<div style="margin: 1rem">
+			<p>Billsplit is an easy and fast way to split restaurant bills</p>
+		</div>
+
 		<Card style="margin: 1rem 0.5rem" variant="outlined">
 			<Content><p style="margin: 1rem">No one added yet.</p></Content>
 		</Card>
