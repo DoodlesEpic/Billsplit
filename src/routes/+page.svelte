@@ -38,7 +38,7 @@
 
 	<div style="margin: 1rem">
 		<Fab
-			style="position: fixed; bottom: 0; right: 0; margin: 2rem;"
+			style="position: fixed; z-index: 1; bottom: 0; right: 0; margin: 2rem;"
 			color="primary"
 			extended
 			on:click={() => {
