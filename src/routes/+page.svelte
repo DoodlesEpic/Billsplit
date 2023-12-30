@@ -2,7 +2,7 @@
 	import Button from '@smui/button';
 	import IconButton from '@smui/icon-button';
 	import Textfield from '@smui/textfield';
-	import Paper from '@smui/paper';
+	import Card, { Content } from '@smui/card';
 	import Fab, { Label, Icon } from '@smui/fab';
 	import TopAppBar, { Row, Section, Title, AutoAdjust } from '@smui/top-app-bar';
 
@@ -101,94 +101,101 @@
 	{/if}
 
 	{#each people as person}
-		<Paper elevation={4} style="margin: 1rem 0.5rem">
-			<div class="row">
-				<Textfield
-					class="name"
-					placeholder="Person name"
-					label="Person name"
-					type="text"
-					bind:value={person.name}
-				/>
-
-				<IconButton
-					class="material-icons"
-					on:click={() => {
-						person.products.unshift({ id: crypto.randomUUID(), name: '', price: null });
-						person = person;
-					}}>add</IconButton
-				>
-
-				<IconButton
-					class="material-icons"
-					on:click={() => {
-						people = people.filter((p) => p.id !== person.id);
-						people = people;
-					}}>delete</IconButton
-				>
-			</div>
-
-			{#each person.products as product}
+		<Card style="margin: 1rem 0.5rem" variant="outlined">
+			<Content>
 				<div class="row">
 					<Textfield
+						class="name"
+						placeholder="Person name"
+						label="Person name"
 						type="text"
-						placeholder="Product name"
-						variant="outlined"
-						bind:value={product.name}
-						label="Product name"
-					/>
-
-					<Textfield
-						type="number"
-						variant="outlined"
-						placeholder="Product price"
-						bind:value={product.price}
-						label="Product price"
-						prefix="$"
-						input$pattern={'\\d+(\\.\\d{2})?'}
+						bind:value={person.name}
 					/>
 
 					<IconButton
 						class="material-icons"
-						on:click={() => (person.products = person.products.filter((p) => p.id !== product.id))}
-						>delete</IconButton
-					>
-				</div>
-			{/each}
+						on:click={() => {
+							person.products.unshift({ id: crypto.randomUUID(), name: '', price: null });
+							person = person;
+						}}
+						>add
+					</IconButton>
 
-			<p>
-				<bold> ${person.products.reduce((acc, product) => acc + (product.price ?? 0), 0)} </bold>
-			</p>
-		</Paper>
+					<IconButton
+						class="material-icons"
+						on:click={() => {
+							people = people.filter((p) => p.id !== person.id);
+							people = people;
+						}}
+						>delete
+					</IconButton>
+				</div>
+
+				{#each person.products as product}
+					<div class="row">
+						<Textfield
+							type="text"
+							placeholder="Product name"
+							variant="outlined"
+							bind:value={product.name}
+							label="Product name"
+						/>
+
+						<Textfield
+							type="number"
+							variant="outlined"
+							placeholder="Product price"
+							bind:value={product.price}
+							label="Product price"
+							prefix="$"
+							input$pattern={'\\d+(\\.\\d{2})?'}
+						/>
+
+						<IconButton
+							class="material-icons"
+							on:click={() =>
+								(person.products = person.products.filter((p) => p.id !== product.id))}
+							>delete
+						</IconButton>
+					</div>
+				{/each}
+
+				<p>
+					<bold> ${person.products.reduce((acc, product) => acc + (product.price ?? 0), 0)} </bold>
+				</p>
+			</Content>
+		</Card>
 	{/each}
 
 	{#if people.some((person) => person.products.some((product) => product.price))}
-		<Paper elevation={4} style="margin: 1rem 0.5rem">
-			<h3>Bill preview</h3>
-			<ul style="list-style: none; padding: 0rem">
-				{#each people as person}
-					{#each person.products as product}
-						{#if product.price}
-							<li>{product.name} ${product.price} - {person.name}</li>
-						{/if}
+		<Card style="margin: 1rem 0.5rem" variant="outlined">
+			<Content>
+				<h4>Bill preview</h4>
+				<ul style="list-style: none; margin-top: 0; padding: 0rem">
+					{#each people as person}
+						{#each person.products as product}
+							{#if product.price}
+								<li>{product.name} ${product.price} - {person.name}</li>
+							{/if}
+						{/each}
 					{/each}
-				{/each}
-			</ul>
+				</ul>
 
-			<h4 style="margin-top: 1rem;">Total value of all products</h4>
-			<p>
-				${people.reduce(
-					(acc, person) => acc + person.products.reduce((acc, product) => acc + product.price, 0),
-					0
-				)}
-			</p>
-		</Paper>
+				<h5 style="margin: 1rem 0rem 0rem 0rem">Total value of all products</h5>
+				<p style="margin-top: 0;">
+					${people.reduce(
+						(acc, person) => acc + person.products.reduce((acc, product) => acc + product.price, 0),
+						0
+					)}
+				</p>
+			</Content>
+		</Card>
 	{/if}
 </AutoAdjust>
 
 <style>
-	h4,
-	h3 {
+	h5,
+	h4 {
 		margin: 0rem;
 		padding: 0rem;
 	}

@@ -10,7 +10,7 @@ A fast and easy way to split restaurant bills. A simple web application built wi
 
 Start a development server:
 
-```bash
+````bash
 yarn dev
 
 ## Building
@@ -19,7 +19,7 @@ To create a production version of the app:
 
 ```bash
 yarn build
-```
+````
 
 You can preview the production build with `yarn preview`.
 

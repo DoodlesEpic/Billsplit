@@ -1672,6 +1672,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@material/card@npm:^14.0.0":
+  version: 14.0.0
+  resolution: "@material/card@npm:14.0.0"
+  dependencies:
+    "@material/dom": "npm:^14.0.0"
+    "@material/elevation": "npm:^14.0.0"
+    "@material/feature-targeting": "npm:^14.0.0"
+    "@material/ripple": "npm:^14.0.0"
+    "@material/rtl": "npm:^14.0.0"
+    "@material/shape": "npm:^14.0.0"
+    "@material/theme": "npm:^14.0.0"
+    tslib: "npm:^2.1.0"
+  checksum: bab21cdca0530fcb7d4d668ba9ad35cf18aca03973cbb87ec17580d72bd017e9807172599a001d80ab449fe545548df5aca124ea2a708b8f87f20dd7a1b436e3
+  languageName: node
+  linkType: hard
+
 "@material/density@npm:^14.0.0":
   version: 14.0.0
   resolution: "@material/density@npm:14.0.0"
@@ -2053,6 +2069,37 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@smui/button@npm:^7.0.0-beta.16":
+  version: 7.0.0-beta.16
+  resolution: "@smui/button@npm:7.0.0-beta.16"
+  dependencies:
+    "@material/button": "npm:^14.0.0"
+    "@material/elevation": "npm:^14.0.0"
+    "@material/feature-targeting": "npm:^14.0.0"
+    "@material/ripple": "npm:^14.0.0"
+    "@material/shape": "npm:^14.0.0"
+    "@material/theme": "npm:^14.0.0"
+    "@smui/common": "npm:^7.0.0-beta.16"
+    "@smui/ripple": "npm:^7.0.0-beta.16"
+    svelte2tsx: "npm:^0.6.27"
+  checksum: 7ae30c169e689922330b699d12881a804f16c3e1ff9cd27bf860a8403bcb53a69b043f13fcede7a65a105748139a978b8b1bb5bc117c06fb40fe84780e87fc91
+  languageName: node
+  linkType: hard
+
+"@smui/card@npm:^7.0.0-beta.16":
+  version: 7.0.0-beta.16
+  resolution: "@smui/card@npm:7.0.0-beta.16"
+  dependencies:
+    "@material/card": "npm:^14.0.0"
+    "@smui/button": "npm:^7.0.0-beta.16"
+    "@smui/common": "npm:^7.0.0-beta.16"
+    "@smui/icon-button": "npm:^7.0.0-beta.16"
+    "@smui/ripple": "npm:^7.0.0-beta.16"
+    svelte2tsx: "npm:^0.6.27"
+  checksum: 3a7c939801774d0da4d718862e0e01c870ab5715311a6d534400d7e0e72cc80e8f42c50587b878e37f8181d719a2c040609ad9a01e7ef02bcd1c2115b533e12e
+  languageName: node
+  linkType: hard
+
 "@smui/common@npm:^7.0.0-beta.15":
   version: 7.0.0-beta.15
   resolution: "@smui/common@npm:7.0.0-beta.15"
@@ -2110,6 +2157,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@smui/icon-button@npm:^7.0.0-beta.16":
+  version: 7.0.0-beta.16
+  resolution: "@smui/icon-button@npm:7.0.0-beta.16"
+  dependencies:
+    "@material/density": "npm:^14.0.0"
+    "@material/icon-button": "npm:^14.0.0"
+    "@smui/common": "npm:^7.0.0-beta.16"
+    "@smui/ripple": "npm:^7.0.0-beta.16"
+    svelte2tsx: "npm:^0.6.27"
+  checksum: 760cf93d0847bc9d3b4e671369a32f24904c66eec833efb36d16d6f10c9f91de4d581af69132ec120019abc27debf8581e235e54db137c11151b7e51c91460b3
+  languageName: node
+  linkType: hard
+
 "@smui/line-ripple@npm:^7.0.0-beta.15":
   version: 7.0.0-beta.15
   resolution: "@smui/line-ripple@npm:7.0.0-beta.15"
@@ -2130,21 +2190,6 @@ __metadata:
     "@smui/floating-label": "npm:^7.0.0-beta.15"
     svelte2tsx: "npm:^0.6.21"
   checksum: eec646e360aff5133848c3650cb851d2a53b4b544ace537ce3e67ce3b5e86dfcb78aecec626606cf83e01c8f2d3cefe32c349825d7a79c6818908ee0ce3fab25
-  languageName: node
-  linkType: hard
-
-"@smui/paper@npm:^7.0.0-beta.15":
-  version: 7.0.0-beta.15
-  resolution: "@smui/paper@npm:7.0.0-beta.15"
-  dependencies:
-    "@material/elevation": "npm:^14.0.0"
-    "@material/feature-targeting": "npm:^14.0.0"
-    "@material/shape": "npm:^14.0.0"
-    "@material/theme": "npm:^14.0.0"
-    "@material/typography": "npm:^14.0.0"
-    "@smui/common": "npm:^7.0.0-beta.15"
-    svelte2tsx: "npm:^0.6.21"
-  checksum: 44a408ecd1780001f4011132d06387d42a881d519ae93d3b993ea8c5868f7939ba874f8e3345fa31ecd37c447d202e37fc52098e8c03c80dd01faacd15b9e5dc
   languageName: node
   linkType: hard
 
@@ -2773,9 +2818,9 @@ __metadata:
   resolution: "billsplit@workspace:."
   dependencies:
     "@smui/button": "npm:^7.0.0-beta.15"
+    "@smui/card": "npm:^7.0.0-beta.16"
     "@smui/fab": "npm:^7.0.0-beta.16"
     "@smui/icon-button": "npm:^7.0.0-beta.15"
-    "@smui/paper": "npm:^7.0.0-beta.15"
     "@smui/textfield": "npm:^7.0.0-beta.15"
     "@smui/top-app-bar": "npm:^7.0.0-beta.15"
     "@sveltejs/adapter-auto": "npm:^2.1.1"
