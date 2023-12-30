@@ -36,24 +36,24 @@
 		<p>A fast and easy way to split restaurant bills</p>
 	</div>
 
-	<div style="margin: 1rem">
-		<Fab
-			style="position: fixed; z-index: 1; bottom: 0; right: 0; margin: 2rem;"
-			color="primary"
-			extended
-			on:click={() => {
-				people.unshift({
-					id: crypto.randomUUID(),
-					name: 'Person ' + ++counter,
-					products: []
-				});
-				people = people;
-			}}
-		>
-			<Icon class="material-icons">add</Icon>
-			<Label>Add person</Label>
-		</Fab>
+	<Fab
+		style="position: fixed; z-index: 1; bottom: 0; right: 0; margin: 2rem;"
+		color="primary"
+		extended
+		on:click={() => {
+			people.unshift({
+				id: crypto.randomUUID(),
+				name: 'Person ' + ++counter,
+				products: []
+			});
+			people = people;
+		}}
+	>
+		<Icon class="material-icons">add</Icon>
+		<Label>Add person</Label>
+	</Fab>
 
+	<div style="margin: 1rem">
 		{#if import.meta.env.DEV}
 			<Button variant="raised" style="background-color: orange" on:click={() => console.log(people)}
 				>Print</Button
