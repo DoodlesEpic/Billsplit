@@ -2571,18 +2571,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vite-pwa/sveltekit@npm:^0.3.0":
-  version: 0.3.0
-  resolution: "@vite-pwa/sveltekit@npm:0.3.0"
-  dependencies:
-    kolorist: "npm:^1.8.0"
-  peerDependencies:
-    "@sveltejs/kit": ^1.3.1 || ^2.0.1
-    vite-plugin-pwa: ">=0.17.4 <1"
-  checksum: 96372bebf896a22569e4b9bf84279a5b042fa1992646e247f4141433f78751e595196063f272eca5855467f6f517aabb42b55664ff248ffd56d0e13f995bdb0e
-  languageName: node
-  linkType: hard
-
 "abbrev@npm:^1.0.0":
   version: 1.1.1
   resolution: "abbrev@npm:1.1.1"
@@ -2880,7 +2868,6 @@ __metadata:
     "@sveltejs/vite-plugin-svelte": "npm:^3.0.1"
     "@typescript-eslint/eslint-plugin": "npm:^6.16.0"
     "@typescript-eslint/parser": "npm:^6.16.0"
-    "@vite-pwa/sveltekit": "npm:^0.3.0"
     eslint: "npm:^8.56.0"
     eslint-config-prettier: "npm:^9.1.0"
     eslint-plugin-svelte: "npm:^2.35.1"
@@ -4736,13 +4723,6 @@ __metadata:
   version: 0.29.0
   resolution: "known-css-properties@npm:0.29.0"
   checksum: ab4e1d6bad10fe4ba15183e640dab8eec52aaa5a69899382de5843699f145e49c67e6a3ca5c8426ccd31577d3eec4459004ed317a550c3523b863a251280ddd4
-  languageName: node
-  linkType: hard
-
-"kolorist@npm:^1.8.0":
-  version: 1.8.0
-  resolution: "kolorist@npm:1.8.0"
-  checksum: 71d5d122951cc65f2f14c3e1d7f8fd91694b374647d4f6deec3816d018cd04a44edd9578d93e00c82c2053b925e5d30a0565746c4171f4ca9fce1a13bd5f3315
   languageName: node
   linkType: hard
 
