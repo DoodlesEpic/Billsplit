@@ -12,4 +12,4 @@
 	</Row>
 </TopAppBar>
 
-<AutoAdjust {topAppBar}><slot /></AutoAdjust>
+<AutoAdjust style="max-width: 1000px; margin: auto" {topAppBar}><slot /></AutoAdjust>
