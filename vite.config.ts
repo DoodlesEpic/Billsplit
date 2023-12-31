@@ -7,6 +7,7 @@ export default defineConfig({
 		sveltekit(),
 		VitePWA({
 			registerType: 'autoUpdate',
+			strategies: 'generateSW',
 			manifest: {
 				name: 'Billsplit',
 				short_name: 'Billsplit',
