@@ -6,7 +6,12 @@ export default defineConfig({
 	plugins: [
 		sveltekit(),
 		VitePWA({
-			registerType: 'autoUpdate'
+			registerType: 'autoUpdate',
+			manifest: {
+				name: 'Billsplit',
+				short_name: 'Billsplit',
+				theme_color: '#008cff'
+			}
 		})
 	]
 });
