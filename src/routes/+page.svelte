@@ -174,7 +174,8 @@
 			<h5 style="margin: 1rem 0rem 0rem 0rem">Total value of all products</h5>
 			<p style="margin-top: 0;">
 				${people.reduce(
-					(acc, person) => acc + person.products.reduce((acc, product) => acc + product.price, 0),
+					(acc, person) =>
+						acc + person.products.reduce((acc, product) => acc + (product.price ?? 0), 0),
 					0
 				)}
 			</p>
