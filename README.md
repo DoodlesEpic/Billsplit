@@ -1,17 +1,18 @@
 # Billsplit
 
-A fast and easy way to split restaurant bills. A simple web application built with SvelteKit.
+A fast and easy way to split restaurant bills. Billsplit is a simple web application built with SvelteKit that helps separate costs between people.
 
 ## Screenshot
 
-![Early development screenshot](https://github.com/DoodlesEpic/Billsplit/assets/37254797/3409aa22-6ad8-4fc8-a9be-486a92e895cf)
+<img alt="Screenshot on mobile" src="https://github.com/DoodlesEpic/Billsplit/assets/37254797/d3d04a50-ef64-4b8d-a7ff-ea21a792f731" width="300">
 
 ## Developing
 
 Start a development server:
 
-````bash
+```bash
 yarn dev
+```
 
 ## Building
 
@@ -19,7 +20,7 @@ To create a production version of the app:
 
 ```bash
 yarn build
-````
+```
 
 You can preview the production build with `yarn preview`.
 
