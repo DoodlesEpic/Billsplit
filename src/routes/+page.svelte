@@ -19,20 +19,68 @@
 
 	let people: Person[] = [];
 	let counter = 2;
-</script>
 
-<Fab
-	style="position: fixed; z-index: 1; bottom: 0; right: 0; margin: 2rem;"
-	color="primary"
-	extended
-	on:click={() => {
+	// People management
+	const addPerson = () => {
 		people.unshift({
 			id: crypto.randomUUID(),
 			name: 'Person ' + ++counter,
 			products: []
 		});
 		people = people;
-	}}
+	};
+	const removePerson = (person: Person) => (people = people.filter((p) => p.id !== person.id));
+
+	// Product manangement
+	const addProduct = (person: Person) => {
+		person.products.unshift({ id: crypto.randomUUID(), name: '', price: null });
+		people = people;
+	};
+	const removeProduct = (person: Person, product: Product) => {
+		person.products = person.products.filter((p) => p.id !== product.id);
+		people = people;
+	};
+
+	// Testing functions
+	const printData = () => console.log(people);
+	const mockData = () => {
+		people = [
+			{
+				id: crypto.randomUUID(),
+				name: 'Person 1',
+				products: [
+					{
+						id: crypto.randomUUID(),
+						name: 'Product 1',
+						price: 100
+					},
+					{
+						id: crypto.randomUUID(),
+						name: 'Product 2',
+						price: 200
+					}
+				]
+			},
+			{
+				id: crypto.randomUUID(),
+				name: 'Person 2',
+				products: [
+					{
+						id: crypto.randomUUID(),
+						name: 'Product 1',
+						price: 100
+					}
+				]
+			}
+		];
+	};
+</script>
+
+<Fab
+	style="position: fixed; z-index: 1; bottom: 0; right: 0; margin: 2rem;"
+	color="primary"
+	extended
+	on:click={addPerson}
 >
 	<Icon class="material-icons">add</Icon>
 	<Label>Add person</Label>
@@ -40,44 +88,8 @@
 
 <div style="margin: 1rem">
 	{#if import.meta.env.DEV}
-		<Button variant="raised" style="background-color: orange" on:click={() => console.log(people)}
-			>Print</Button
-		>
-		<Button
-			variant="raised"
-			style="background-color: orange"
-			on:click={() => {
-				people = [
-					{
-						id: crypto.randomUUID(),
-						name: 'Person 1',
-						products: [
-							{
-								id: crypto.randomUUID(),
-								name: 'Product 1',
-								price: 100
-							},
-							{
-								id: crypto.randomUUID(),
-								name: 'Product 2',
-								price: 200
-							}
-						]
-					},
-					{
-						id: crypto.randomUUID(),
-						name: 'Person 2',
-						products: [
-							{
-								id: crypto.randomUUID(),
-								name: 'Product 1',
-								price: 100
-							}
-						]
-					}
-				];
-			}}>Default</Button
-		>
+		<Button variant="raised" style="background-color: orange" on:click={printData}>Print</Button>
+		<Button variant="raised" style="background-color: orange" on:click={mockData}>Default</Button>
 	{/if}
 </div>
 
@@ -103,23 +115,8 @@
 					bind:value={person.name}
 				/>
 
-				<IconButton
-					class="material-icons"
-					on:click={() => {
-						person.products.unshift({ id: crypto.randomUUID(), name: '', price: null });
-						person = person;
-					}}
-					>add
-				</IconButton>
-
-				<IconButton
-					class="material-icons"
-					on:click={() => {
-						people = people.filter((p) => p.id !== person.id);
-						people = people;
-					}}
-					>delete
-				</IconButton>
+				<IconButton class="material-icons" on:click={() => addProduct(person)}>add</IconButton>
+				<IconButton class="material-icons" on:click={() => removePerson(person)}>delete</IconButton>
 			</div>
 
 			{#each person.products as product}
@@ -142,9 +139,7 @@
 						input$pattern={'\\d+(\\.\\d{2})?'}
 					/>
 
-					<IconButton
-						class="material-icons"
-						on:click={() => (person.products = person.products.filter((p) => p.id !== product.id))}
+					<IconButton class="material-icons" on:click={() => removeProduct(person, product)}
 						>delete
 					</IconButton>
 				</div>
