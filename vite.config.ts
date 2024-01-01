@@ -35,9 +35,6 @@ export default defineConfig({
 						purpose: 'maskable'
 					}
 				]
-			},
-			workbox: {
-				globPatterns: ['client/**/*.{js,css,ico,png,svg,webp,webmanifest}', 'prerendered/**/*.html']
 			}
 		})
 	]
