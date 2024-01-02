@@ -1,6 +1,6 @@
 # Billsplit
 
-A fast and easy way to split restaurant bills. Billsplit is a simple web application built with SvelteKit that helps separate costs between people.
+Billsplit is an easy and fast way to split restaurant bills. It's a simple progressive web application built with SvelteKit that helps separate costs between people. The application does not store your data, nor collect usage analytics.
 
 ## Screenshot
 
