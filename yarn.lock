@@ -1906,6 +1906,26 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@material/drawer@npm:^14.0.0":
+  version: 14.0.0
+  resolution: "@material/drawer@npm:14.0.0"
+  dependencies:
+    "@material/animation": "npm:^14.0.0"
+    "@material/base": "npm:^14.0.0"
+    "@material/dom": "npm:^14.0.0"
+    "@material/elevation": "npm:^14.0.0"
+    "@material/feature-targeting": "npm:^14.0.0"
+    "@material/list": "npm:^14.0.0"
+    "@material/ripple": "npm:^14.0.0"
+    "@material/rtl": "npm:^14.0.0"
+    "@material/shape": "npm:^14.0.0"
+    "@material/theme": "npm:^14.0.0"
+    "@material/typography": "npm:^14.0.0"
+    tslib: "npm:^2.1.0"
+  checksum: 013535ee5b1ef620e525f3763e54192ffbc3534831fafcbd9222ba477b0012553087d7e800ed413b5627b8505a8070b791e2b2c119df601402229a03fbc6fb9d
+  languageName: node
+  linkType: hard
+
 "@material/elevation@npm:^14.0.0":
   version: 14.0.0
   resolution: "@material/elevation@npm:14.0.0"
@@ -2006,6 +2026,24 @@ __metadata:
     "@material/theme": "npm:^14.0.0"
     tslib: "npm:^2.1.0"
   checksum: 87c7b072475f062aec80196e8d2c4c0211e2907978bf6e26c12bccc171065cb0d4b6d44b88e3f3f67baf55eccd9618c2387e746197857704d91b91bab3345a8e
+  languageName: node
+  linkType: hard
+
+"@material/list@npm:^14.0.0":
+  version: 14.0.0
+  resolution: "@material/list@npm:14.0.0"
+  dependencies:
+    "@material/base": "npm:^14.0.0"
+    "@material/density": "npm:^14.0.0"
+    "@material/dom": "npm:^14.0.0"
+    "@material/feature-targeting": "npm:^14.0.0"
+    "@material/ripple": "npm:^14.0.0"
+    "@material/rtl": "npm:^14.0.0"
+    "@material/shape": "npm:^14.0.0"
+    "@material/theme": "npm:^14.0.0"
+    "@material/typography": "npm:^14.0.0"
+    tslib: "npm:^2.1.0"
+  checksum: 3443fc9e6ae42b9ae4a5e8686bb8014a6bc1ea60e206e224d8f382c967a48f2046406dbc9e29338999ee8c82bc5c40865bb597d63578ed1d32050e129164264a
   languageName: node
   linkType: hard
 
@@ -2383,6 +2421,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@smui/drawer@npm:^7.0.0-beta.16":
+  version: 7.0.0-beta.16
+  resolution: "@smui/drawer@npm:7.0.0-beta.16"
+  dependencies:
+    "@material/dom": "npm:^14.0.0"
+    "@material/drawer": "npm:^14.0.0"
+    "@smui/common": "npm:^7.0.0-beta.16"
+    svelte2tsx: "npm:^0.6.27"
+  checksum: be6bd7373fa947126f33098226be4bc6fae78bc8217a8acc7dd7862c3e4ef9d8c413695fd6a9b245fd29bebea1f5add3a1a848220f11317aaf1aa24f3d42c23c
+  languageName: node
+  linkType: hard
+
 "@smui/fab@npm:^7.0.0-beta.16":
   version: 7.0.0-beta.16
   resolution: "@smui/fab@npm:7.0.0-beta.16"
@@ -2428,6 +2478,20 @@ __metadata:
     "@smui/common": "npm:^7.0.0-beta.16"
     svelte2tsx: "npm:^0.6.27"
   checksum: 9a9343598eeb003fb834dcacaa12edc8ff2975b847798440235b3838a7b5fc5f21cf7f19ad3ece3e8a343818d6f52491f12d5aba53c6eabebe1f168bb479080e
+  languageName: node
+  linkType: hard
+
+"@smui/list@npm:^7.0.0-beta.16":
+  version: 7.0.0-beta.16
+  resolution: "@smui/list@npm:7.0.0-beta.16"
+  dependencies:
+    "@material/dom": "npm:^14.0.0"
+    "@material/feature-targeting": "npm:^14.0.0"
+    "@material/list": "npm:^14.0.0"
+    "@smui/common": "npm:^7.0.0-beta.16"
+    "@smui/ripple": "npm:^7.0.0-beta.16"
+    svelte2tsx: "npm:^0.6.27"
+  checksum: 407fadbb7d19f5b1db7e2f0d9e36c6162e96f7712e87a95894bfd69d739bd373b7d6fcdbe2530d7911554787abcd912d5cbdb1a5b4915528b036e6e212699bd8
   languageName: node
   linkType: hard
 
@@ -3087,8 +3151,10 @@ __metadata:
   dependencies:
     "@smui/button": "npm:^7.0.0-beta.16"
     "@smui/card": "npm:^7.0.0-beta.16"
+    "@smui/drawer": "npm:^7.0.0-beta.16"
     "@smui/fab": "npm:^7.0.0-beta.16"
     "@smui/icon-button": "npm:^7.0.0-beta.16"
+    "@smui/list": "npm:^7.0.0-beta.16"
     "@smui/textfield": "npm:^7.0.0-beta.16"
     "@smui/top-app-bar": "npm:^7.0.0-beta.16"
     "@sveltejs/adapter-auto": "npm:^3.0.1"
