@@ -18,7 +18,7 @@
 	};
 
 	let people: Person[] = [];
-	let counter = 2;
+	let counter = 0;
 
 	// People management
 	const addPerson = () => {
