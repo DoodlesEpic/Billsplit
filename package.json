@@ -22,7 +22,7 @@
 		"@smui/list": "^7.0.0-beta.16",
 		"@smui/textfield": "^7.0.0-beta.16",
 		"@smui/top-app-bar": "^7.0.0-beta.16",
-		"@sveltejs/adapter-auto": "^3.0.1",
+		"@sveltejs/adapter-static": "^3.0.1",
 		"@sveltejs/kit": "^2.0.6",
 		"@sveltejs/vite-plugin-svelte": "^3.0.1",
 		"@typescript-eslint/eslint-plugin": "^6.16.0",
