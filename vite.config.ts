@@ -8,10 +8,16 @@ export default defineConfig({
 		VitePWA({
 			registerType: 'autoUpdate',
 			strategies: 'generateSW',
+			srcDir: './src',
+			scope: '/',
+			base: '/',
 			manifest: {
 				name: 'Billsplit',
 				short_name: 'Billsplit',
+				start_url: '/',
+				scope: '/',
 				theme_color: '#008cff',
+				background_color: '#ffffff',
 				icons: [
 					{
 						src: 'pwa-64x64.png',
