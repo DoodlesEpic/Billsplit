@@ -4,7 +4,7 @@
 	import Textfield from '@smui/textfield';
 	import Card, { Content } from '@smui/card';
 	import Fab, { Label, Icon } from '@smui/fab';
-	import { type Product, type Person, people, counter } from '$lib';
+	import { type Product, type Person, people, counter, mockData } from '$lib';
 	import { afterUpdate, onMount } from 'svelte';
 
 	// Retrieve data from localStorage
@@ -34,10 +34,9 @@
 			}
 		]);
 	};
-
 	const removePerson = (person: Person) => people.set($people.filter((p) => p.id !== person.id));
 
-	// Product manangement
+	// Product management
 	const addProduct = (person: Person) =>
 		people.update(($people) =>
 			$people.map((p) =>
@@ -46,7 +45,6 @@
 					: p
 			)
 		);
-
 	const removeProduct = (person: Person, product: Product) =>
 		people.update(($people) =>
 			$people.map((p) =>
@@ -56,36 +54,7 @@
 
 	// Testing functions
 	const printData = () => console.log($people);
-	const mockData = () =>
-		people.set([
-			{
-				id: crypto.randomUUID(),
-				name: 'Person 1',
-				products: [
-					{
-						id: crypto.randomUUID(),
-						name: 'Product 1',
-						price: 100
-					},
-					{
-						id: crypto.randomUUID(),
-						name: 'Product 2',
-						price: 200
-					}
-				]
-			},
-			{
-				id: crypto.randomUUID(),
-				name: 'Person 2',
-				products: [
-					{
-						id: crypto.randomUUID(),
-						name: 'Product 1',
-						price: 100
-					}
-				]
-			}
-		]);
+	const testData = () => people.set(mockData);
 </script>
 
 <Fab
@@ -101,7 +70,7 @@
 <div style="margin: 1rem">
 	{#if import.meta.env.DEV}
 		<Button variant="raised" style="background-color: orange" on:click={printData}>Print</Button>
-		<Button variant="raised" style="background-color: orange" on:click={mockData}>Default</Button>
+		<Button variant="raised" style="background-color: orange" on:click={testData}>Default</Button>
 	{/if}
 </div>
 
