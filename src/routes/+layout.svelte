@@ -58,9 +58,7 @@
 
 			<Separator />
 			<Item on:click={resetBill}>
-				<Graphic class="material-icons" aria-hidden="true"
-					><span class="material-symbols-outlined"> restart_alt </span></Graphic
-				>
+				<Graphic class="material-icons" aria-hidden="true">restart_alt</Graphic>
 				<Text>Reset bill</Text>
 			</Item>
 		</List>
