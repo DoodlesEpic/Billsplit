@@ -14,15 +14,18 @@
 	});
 
 	// People management
-	const addPerson = () => {
-		people.unshift({
-			id: crypto.randomUUID(),
-			name: 'Person ' + ++counter,
-			products: []
-		});
-		people = people;
-	};
-	const removePerson = (person: Person) => (people = people.filter((p) => p.id !== person.id));
+	const addPerson = () =>
+		peopleStore.set([
+			...people,
+			{
+				id: crypto.randomUUID(),
+				name: 'Person ' + ++counter,
+				products: []
+			}
+		]);
+
+	const removePerson = (person: Person) =>
+		peopleStore.set(people.filter((p) => p.id !== person.id));
 
 	// Product manangement
 	const addProduct = (person: Person) => {
