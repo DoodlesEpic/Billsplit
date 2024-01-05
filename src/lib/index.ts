@@ -13,3 +13,4 @@ export type Person = {
 };
 
 export const peopleStore = writable<Person[]>([]);
+export const counterStore = writable(0);
