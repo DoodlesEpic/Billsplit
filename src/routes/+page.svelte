@@ -46,8 +46,8 @@
 
 	// Testing functions
 	const printData = () => console.log(people);
-	const mockData = () => {
-		people = [
+	const mockData = () =>
+		peopleStore.set([
 			{
 				id: crypto.randomUUID(),
 				name: 'Person 1',
@@ -75,8 +75,7 @@
 					}
 				]
 			}
-		];
-	};
+		]);
 </script>
 
 <Fab
