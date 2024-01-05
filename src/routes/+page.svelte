@@ -4,34 +4,27 @@
 	import Textfield from '@smui/textfield';
 	import Card, { Content } from '@smui/card';
 	import Fab, { Label, Icon } from '@smui/fab';
-	import { type Product, type Person, peopleStore, counterStore } from '$lib';
-
-	let counter = 0;
-	counterStore.subscribe((value) => counter = value);
-
-	let people: Person[] = [];
-	peopleStore.subscribe((value) => people = value);
+	import { type Product, type Person, people, counter } from '$lib';
 
 	// People management
 	const addPerson = () => {
-		peopleStore.set([
-			...people,
+		counter.set($counter + 1);
+		people.set([
+			...$people,
 			{
 				id: crypto.randomUUID(),
-				name: 'Person ' + ++counter,
+				name: 'Person ' + $counter,
 				products: []
 			}
 		]);
-		counterStore.set(counter);
 	};
 
-	const removePerson = (person: Person) =>
-		peopleStore.set(people.filter((p) => p.id !== person.id));
+	const removePerson = (person: Person) => people.set($people.filter((p) => p.id !== person.id));
 
 	// Product manangement
 	const addProduct = (person: Person) =>
-		peopleStore.update((people) =>
-			people.map((p) =>
+		people.update(($people) =>
+			$people.map((p) =>
 				p.id === person.id
 					? { ...p, products: [{ id: crypto.randomUUID(), name: '', price: null }, ...p.products] }
 					: p
@@ -39,16 +32,16 @@
 		);
 
 	const removeProduct = (person: Person, product: Product) =>
-		peopleStore.update((people) =>
-			people.map((p) =>
+		people.update(($people) =>
+			$people.map((p) =>
 				p.id === person.id ? { ...p, products: p.products.filter((p) => p.id !== product.id) } : p
 			)
 		);
 
 	// Testing functions
-	const printData = () => console.log(people);
+	const printData = () => console.log($people);
 	const mockData = () =>
-		peopleStore.set([
+		people.set([
 			{
 				id: crypto.randomUUID(),
 				name: 'Person 1',
@@ -96,7 +89,7 @@
 	{/if}
 </div>
 
-{#if !people.length}
+{#if !$people.length}
 	<div style="margin: 1rem">
 		<p>Billsplit is an easy and fast way to split restaurant bills</p>
 	</div>
@@ -106,7 +99,7 @@
 	</Card>
 {/if}
 
-{#each people as person}
+{#each $people as person}
 	<Card style="margin: 1rem 0.5rem" variant="outlined">
 		<Content>
 			<div class="row">
@@ -155,12 +148,12 @@
 	</Card>
 {/each}
 
-{#if people.some((person) => person.products.some((product) => product.price))}
+{#if $people.some((person) => person.products.some((product) => product.price))}
 	<Card style="margin: 1rem 0.5rem" variant="outlined">
 		<Content>
 			<h4>Bill preview</h4>
 			<ul style="list-style: none; margin-top: 0; padding: 0rem">
-				{#each people as person}
+				{#each $people as person}
 					{#each person.products as product}
 						{#if product.price}
 							<li>{product.name} ${product.price} - {person.name}</li>
@@ -171,7 +164,7 @@
 
 			<h5 style="margin: 1rem 0rem 0rem 0rem">Total value of all products</h5>
 			<p style="margin-top: 0;">
-				${people.reduce(
+				${$people.reduce(
 					(acc, person) =>
 						acc + person.products.reduce((acc, product) => acc + (product.price ?? 0), 0),
 					0

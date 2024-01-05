@@ -6,7 +6,7 @@
 	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
 	import { pwaInfo } from 'virtual:pwa-info';
-	import { counterStore, peopleStore } from '$lib';
+	import { counter, people } from '$lib';
 
 	onMount(async () => {
 		if (pwaInfo) {
@@ -30,8 +30,8 @@
 
 	const toggleDrawer = () => (open = !open);
 	const resetBill = () => {
-		peopleStore.set([]);
-		counterStore.set(0);
+		people.set([]);
+		counter.set(0);
 	};
 </script>
 

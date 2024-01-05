@@ -12,5 +12,5 @@ export type Person = {
 	products: Product[];
 };
 
-export const peopleStore = writable<Person[]>([]);
-export const counterStore = writable(0);
+export const people = writable<Person[]>([]);
+export const counter = writable(0);
