@@ -1,3 +1,5 @@
+import { writable } from 'svelte/store';
+
 export type Product = {
 	id: string;
 	name: string;
@@ -9,3 +11,5 @@ export type Person = {
 	name: string;
 	products: Product[];
 };
+
+export const peopleStore = writable<Person[]>([]);

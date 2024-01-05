@@ -4,10 +4,14 @@
 	import Textfield from '@smui/textfield';
 	import Card, { Content } from '@smui/card';
 	import Fab, { Label, Icon } from '@smui/fab';
-	import { type Product, type Person } from '$lib';
+	import { type Product, type Person, peopleStore } from '$lib';
 
 	let people: Person[] = [];
 	let counter = 0;
+
+	peopleStore.subscribe((value) => {
+		people = value;
+	});
 
 	// People management
 	const addPerson = () => {
