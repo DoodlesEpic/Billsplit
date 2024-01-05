@@ -4,18 +4,7 @@
 	import Textfield from '@smui/textfield';
 	import Card, { Content } from '@smui/card';
 	import Fab, { Label, Icon } from '@smui/fab';
-
-	type Product = {
-		id: string;
-		name: string;
-		price: number | null;
-	};
-
-	type Person = {
-		id: string;
-		name: string;
-		products: Product[];
-	};
+	import { type Product, type Person } from '$lib';
 
 	let people: Person[] = [];
 	let counter = 0;
