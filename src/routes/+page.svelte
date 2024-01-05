@@ -5,6 +5,22 @@
 	import Card, { Content } from '@smui/card';
 	import Fab, { Label, Icon } from '@smui/fab';
 	import { type Product, type Person, people, counter } from '$lib';
+	import { afterUpdate, onMount } from 'svelte';
+
+	// Retrieve data from localStorage
+	onMount(() => {
+		const savedPeople = localStorage.getItem('people');
+		if (savedPeople) people.set(JSON.parse(savedPeople));
+
+		const savedCounter = localStorage.getItem('counter');
+		if (savedCounter) counter.set(JSON.parse(savedCounter));
+	});
+
+	// Persist data to localStorage
+	afterUpdate(() => {
+		localStorage.setItem('people', JSON.stringify($people));
+		localStorage.setItem('counter', JSON.stringify($counter));
+	});
 
 	// People management
 	const addPerson = () => {
