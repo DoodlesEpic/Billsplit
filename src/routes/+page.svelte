@@ -28,14 +28,21 @@
 		peopleStore.set(people.filter((p) => p.id !== person.id));
 
 	// Product manangement
-	const addProduct = (person: Person) => {
-		person.products.unshift({ id: crypto.randomUUID(), name: '', price: null });
-		people = people;
-	};
-	const removeProduct = (person: Person, product: Product) => {
-		person.products = person.products.filter((p) => p.id !== product.id);
-		people = people;
-	};
+	const addProduct = (person: Person) =>
+		peopleStore.update((people) =>
+			people.map((p) =>
+				p.id === person.id
+					? { ...p, products: [{ id: crypto.randomUUID(), name: '', price: null }, ...p.products] }
+					: p
+			)
+		);
+
+	const removeProduct = (person: Person, product: Product) =>
+		peopleStore.update((people) =>
+			people.map((p) =>
+				p.id === person.id ? { ...p, products: p.products.filter((p) => p.id !== product.id) } : p
+			)
+		);
 
 	// Testing functions
 	const printData = () => console.log(people);
