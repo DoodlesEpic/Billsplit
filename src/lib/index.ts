@@ -1,21 +1,10 @@
 import { writable } from 'svelte/store';
-
-export type Product = {
-	id: string;
-	name: string;
-	price: number | null;
-};
-
-export type Person = {
-	id: string;
-	name: string;
-	products: Product[];
-};
+import type { Person } from '$lib/types';
 
 export const people = writable<Person[]>([]);
 export const counter = writable(0);
 
-export const mockData = [
+export const mockData: Person[] = [
 	{
 		id: crypto.randomUUID(),
 		name: 'Person 1',

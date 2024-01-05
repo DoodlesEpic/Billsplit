@@ -4,8 +4,9 @@
 	import Textfield from '@smui/textfield';
 	import Card, { Content } from '@smui/card';
 	import Fab, { Label, Icon } from '@smui/fab';
-	import { type Product, type Person, people, counter, mockData } from '$lib';
 	import { afterUpdate, onMount } from 'svelte';
+	import { people, counter, mockData } from '$lib';
+	import type { Person, Product } from '$lib/types';
 
 	// Retrieve data from localStorage
 	onMount(() => {
