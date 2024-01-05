@@ -6,6 +6,7 @@
 	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
 	import { pwaInfo } from 'virtual:pwa-info';
+	import { peopleStore } from '$lib';
 
 	onMount(async () => {
 		if (pwaInfo) {
@@ -28,6 +29,7 @@
 	let open = false;
 
 	const toggleDrawer = () => (open = !open);
+	const resetBill = () => peopleStore.set([]);
 </script>
 
 <svelte:head>
@@ -41,6 +43,7 @@
 			<Title>Billsplit</Title>
 		</Section>
 	</Row>
+
 	<Separator />
 	<Content>
 		<List>
@@ -51,6 +54,14 @@
 			<Item href="/about" on:click={toggleDrawer} activated={$page.url.pathname === '/about'}>
 				<Graphic class="material-icons" aria-hidden="true">info</Graphic>
 				<Text>About</Text>
+			</Item>
+
+			<Separator />
+			<Item on:click={resetBill}>
+				<Graphic class="material-icons" aria-hidden="true"
+					><span class="material-symbols-outlined"> restart_alt </span></Graphic
+				>
+				<Text>Reset bill</Text>
 			</Item>
 		</List>
 	</Content>
