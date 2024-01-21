@@ -98,7 +98,11 @@
 					bind:value={person.name}
 				/>
 
-				<IconButton class="material-icons" on:click={() => addProduct(person)}>add</IconButton>
+				<IconButton
+					class="material-icons"
+					style="margin-left: auto"
+					on:click={() => addProduct(person)}>add</IconButton
+				>
 				<IconButton class="material-icons" on:click={() => removePerson(person)}>close</IconButton>
 			</div>
 
