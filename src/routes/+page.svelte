@@ -7,6 +7,7 @@
 	import { afterUpdate, onMount } from 'svelte';
 	import { people, counter, mockData } from '$lib';
 	import type { Person, Product } from '$lib/types';
+	import Separator from '@smui/list/src/Separator.svelte';
 
 	// Retrieve data from localStorage
 	onMount(() => {
@@ -88,7 +89,7 @@
 {#each $people as person}
 	<Card style="margin: 1rem 0.5rem" variant="outlined">
 		<Content>
-			<div class="row">
+			<div class="row" style="margin-top: 0; margin-bottom: 2rem">
 				<Textfield
 					class="name"
 					placeholder="Person name"
@@ -98,7 +99,7 @@
 				/>
 
 				<IconButton class="material-icons" on:click={() => addProduct(person)}>add</IconButton>
-				<IconButton class="material-icons" on:click={() => removePerson(person)}>delete</IconButton>
+				<IconButton class="material-icons" on:click={() => removePerson(person)}>close</IconButton>
 			</div>
 
 			{#each person.products as product}
