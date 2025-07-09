@@ -7,7 +7,6 @@
 	import { afterUpdate, onMount } from 'svelte';
 	import { people, counter, mockData } from '$lib';
 	import type { Person, Product } from '$lib/types';
-	import Separator from '@smui/list/src/Separator.svelte';
 
 	// Retrieve data from localStorage
 	onMount(() => {
