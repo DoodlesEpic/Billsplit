@@ -62,7 +62,7 @@
 	style="position: fixed; z-index: 1; bottom: 0; right: 0; margin: 2rem;"
 	color="primary"
 	extended
-	on:click={addPerson}
+	onclick={addPerson}
 >
 	<Icon class="material-icons">add</Icon>
 	<Label>Add person</Label>
@@ -70,8 +70,8 @@
 
 <div style="margin: 1rem">
 	{#if import.meta.env.DEV}
-		<Button variant="raised" style="background-color: orange" on:click={printData}>Print</Button>
-		<Button variant="raised" style="background-color: orange" on:click={testData}>Default</Button>
+		<Button variant="raised" style="background-color: orange" onclick={printData}>Print</Button>
+		<Button variant="raised" style="background-color: orange" onclick={testData}>Default</Button>
 	{/if}
 </div>
 
@@ -100,9 +100,9 @@
 				<IconButton
 					class="material-icons"
 					style="margin-left: auto"
-					on:click={() => addProduct(person)}>add</IconButton
+					onclick={() => addProduct(person)}>add</IconButton
 				>
-				<IconButton class="material-icons" on:click={() => removePerson(person)}>close</IconButton>
+				<IconButton class="material-icons" onclick={() => removePerson(person)}>close</IconButton>
 			</div>
 
 			{#each person.products as product}
@@ -125,7 +125,7 @@
 						input$pattern={'\\d+(\\.\\d{2})?'}
 					/>
 
-					<IconButton class="material-icons" on:click={() => removeProduct(person, product)}
+					<IconButton class="material-icons" onclick={() => removeProduct(person, product)}
 						>delete
 					</IconButton>
 				</div>

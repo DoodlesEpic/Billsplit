@@ -42,7 +42,7 @@
 <Drawer variant="modal" fixed={false} bind:open>
 	<Row>
 		<Section>
-			<IconButton class="material-icons" on:click={toggleDrawer}>menu</IconButton>
+			<IconButton class="material-icons" onclick={toggleDrawer}>menu</IconButton>
 			<Title>Billsplit</Title>
 		</Section>
 	</Row>
@@ -50,17 +50,17 @@
 	<Separator />
 	<Content>
 		<List>
-			<Item href="/" on:click={toggleDrawer} activated={$page.url.pathname === '/'}>
+			<Item href="/" onclick={toggleDrawer} activated={$page.url.pathname === '/'}>
 				<Graphic class="material-icons" aria-hidden="true">receipt</Graphic>
 				<Text>Bill</Text>
 			</Item>
-			<Item href="/about" on:click={toggleDrawer} activated={$page.url.pathname === '/about'}>
+			<Item href="/about" onclick={toggleDrawer} activated={$page.url.pathname === '/about'}>
 				<Graphic class="material-icons" aria-hidden="true">info</Graphic>
 				<Text>About</Text>
 			</Item>
 
 			<Separator />
-			<Item on:click={resetBill}>
+			<Item onclick={resetBill}>
 				<Graphic class="material-icons" aria-hidden="true">restart_alt</Graphic>
 				<Text>Reset bill</Text>
 			</Item>
@@ -73,7 +73,7 @@
 <TopAppBar bind:this={topAppBar} variant="fixed">
 	<Row>
 		<Section>
-			<IconButton class="material-icons" on:click={toggleDrawer}>menu</IconButton>
+			<IconButton class="material-icons" onclick={toggleDrawer}>menu</IconButton>
 			<Title>Billsplit</Title>
 		</Section>
 	</Row>
